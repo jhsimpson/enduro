@@ -1,0 +1,22 @@
+config:
+  aws:accessKey:
+    secure: AAABAMQHrSjdxr29SyCz4HfAp6yE53gQtTAjXoiqxjcNt3ZoKhkjruGqmImim14epS48yw==
+  aws:region: us-east-1
+  aws:secretKey:
+    secure: AAABAJzbMnGbSgfNVRr7B60a5SGH+kApo7BAnVnJxFS/Py6eFIR4SWoYKyNrpwn9Lm0FpB1qnToeZiR2+/iC9quPuhMBJ3uP
+  digitalocean:token:
+    secure: AAABAFfSL9Rtd2OGaThB0I7i7IJFpSvp3Kzkz/zjhQSk2vrAGhGibZbq/SulGjiz4VLEfQlGbiz5DsqsSSWA12YkDg1SatFMlLktgHIHlTGwG3E9ImiJsacugz0YCxIxSEPM2BtXxg==
+  enduro:acmeEmail:
+    secure: AAABADXPTtIea/+eQMMUWrh6EvNipdCN71QLOwayjqj7kuSaxM27AdYcwo8WBykO2ZSXsSZvimr9
+  enduro:acmeServer: https://acme-v02.api.letsencrypt.org/directory
+  enduro:basicAuthPassword:
+    secure: AAABANBPnP0w+QvuZ79l/DV+EirjBHeUws6Mw0oUNY3EMtLhQ3bf3PO0QI8=
+  enduro:basicAuthUsername:
+    secure: AAABAHdm3+fZYs66SD82eQoRKQNI5oZbGp/vUZ7OV6NG2yHzvUREv2I=
+  enduro:buildImages: "true"
+  enduro:doToken:
+    secure: AAABAFp6hRMb6Q3pP5jmbTI+LkEwcue3oqAN9D71rIwRfzcwCNpRhO5+cRWB0z/AihyARjAkKta5hJSiATjeW0B3NN6jdfGic5f8wkmHDDnPlzfNj9OravbPdMOwkURjDBREXrE/bg==
+  enduro:route53ZoneId:
+    secure: AAABAGgQUD1sMc8NxY2nf6OHvGiO2buBQ2Flq0yluZTb9vW35g6nzY+LaQxd
+  pulumi:disable-default-providers:
+  - kubernetes

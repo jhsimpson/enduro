@@ -1,0 +1,31 @@
+name: Pulumi
+on: [workflow_dispatch]
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.18.x
+      - name: Download Go dependencies
+        run: go mod download
+        working-directory: hack/pulumi
+      - name: Configure kubectl
+        uses: azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.DO_DEV_KUBECONFIG }}
+      - name: Delete Kubernetes resources
+        run: kubectl delete all,pvc,pv --all -n sdps
+      - name: Refresh and update Pulumi stack
+        uses: pulumi/actions@v3
+        with:
+          command: up
+          refresh: true
+          stack-name: dev
+        env:
+          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_TOKEN }}
+          DOCKER_BUILDKIT: 1
